@@ -5,7 +5,9 @@ import fastifyCors from "@fastify/cors";
 
 const app = fastify();
 
-app.register(fastifyCors, { origin: "https://humilhador-signos.vercel.app" });
+app.register(fastifyCors, {
+  origin: ["https://humilhador-signos.vercel.app", "http://localhost:3000"],
+});
 app.get("/", (_, reply) => {
   reply.send({ test: "Ping" });
 });
