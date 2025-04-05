@@ -7,10 +7,6 @@ export const getSarcasticHoroscope = async (
   sign: string
 ): Promise<string> => {
   try {
-    if (!signsData[sign]) {
-      return `## Horóscopo Sarcástico\n\nDesculpe, ${name}, mas '${sign}' não é um signo válido. Será que você inventou isso pra parecer interessante? Tente um dos 12 signos de verdade, porque as estrelas não estão reconhecendo essa criatividade toda.`;
-    }
-
     const response = await ai.models.generateContent({
       model: "gemini-2.0-flash",
       contents: `
@@ -31,7 +27,7 @@ export const getSarcasticHoroscope = async (
       `,
     });
 
-    return response.candidates[0].content.parts[0].text;
+    return response.text;
   } catch (error) {
     console.log(error, "Invalid Sign");
   }
