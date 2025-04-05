@@ -1,11 +1,13 @@
 import { GoogleGenAI } from "@google/genai";
-import { signsData } from "../data/signsData.js";
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 export const getSarcasticHoroscope = async (
   name: string,
   sign: string
 ): Promise<string> => {
+  if (!name || !sign) {
+    throw new Error("Name and sign are required");
+  }
   try {
     const response = await ai.models.generateContent({
       model: "gemini-2.0-flash",
