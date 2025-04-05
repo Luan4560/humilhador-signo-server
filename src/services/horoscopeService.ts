@@ -16,7 +16,9 @@ export const getSarcasticHoroscope = async (
        Por favor, me entregue um texto tão sarcasticamente brilhante que até as estrelas vão revirar os olhos de inveja. 
        Foque nos defeitos mais ridículos e irritantes desse signo, com aquele humor esperto que faz a gente rir enquanto concorda em segredo. 
        Nada de xingamentos, porque ${name} pode ser sensível demais pra lidar com a verdade nua e crua, mas capriche no tom de 'você sabe que é assim mesmo'. 
-       Vamos lá, destrua essa ilusão zodiacal com classe!`,
+       Vamos lá, destrua essa ilusão zodiacal com classe!
+       resuma em no maximo 200 palavras e faça parecer que foi escrito por um astrólogo sarcástico.
+       `,
     });
 
     return response.text;
