@@ -1,5 +1,5 @@
-import fastify from "fastify";
 import "dotenv/config";
+import fastify from "fastify";
 import horoscopeRoutes from "./routes/hosroscopeRoutest.js";
 import fastifyCors from "@fastify/cors";
 

@@ -1,6 +1,4 @@
 import { FastifyRequest, FastifyReply, HookHandlerDoneFunction } from "fastify";
-import { request } from "http";
-
 export const validateInput = (
   request: FastifyRequest<{ Body: HoroscopeRequest }>,
   reply: FastifyReply,
